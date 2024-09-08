@@ -1,0 +1,25 @@
+# C++ specific
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Compiled files
+*.pyc
+*.pyo
+
+# IDE specific
+.vscode/
+.idea/
+
+# Build output
+build/
+dist/
