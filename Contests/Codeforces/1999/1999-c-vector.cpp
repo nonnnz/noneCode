@@ -2,27 +2,32 @@
 
 using namespace std;
 
+#define FOR(i, start, end) for(int i = (start); i <= (end); ++i)
+
+#define YES cout << "YES"
+#define NO cout << "NO"
+
 void solve() {
     int n, s, m;
     cin >> n >> s >> m;
     vector<pair<int, int>> lr(n+1);
-    bool ans = false;
-    lr[0].first = 0; lr[0].second = 0;
-    for(int i = 1; i < n+1; ++i) {
-        cin >> lr[i].first >> lr[i].second;
-    }
-    if(m - lr[n].second >= s) {
-        cout << "YES";
+    lr[0] = {0, 0};
+    FOR(i, 1, n) cin >> lr[i].first >> lr[i].second;
+    if (lr[1].first >= s) {
+        YES;
         return;
     }
-    for(int i = 1; i < n+1; ++i) {
+    if(m - lr[n].second >= s) {
+        YES;
+        return;
+    }
+    FOR(i, 1, n) {
         if(lr[i].first - lr[i-1].second >= s) {
-            ans = true;
-            break;
+            YES;
+            return;
         }
     }
-    
-    cout << (ans ? "YES" : "NO");
+    NO;
 }
 
 int main() {
@@ -30,11 +35,9 @@ int main() {
     cin.tie(0); cout.tie(0);
     int tc = 1;
     cin >> tc;
-    for (int t = 1; t <= tc; ++t) {
-        // cout << "Case #" << t << ": ";
+    while (tc--) {
         solve();
         cout << '\n';
     }
-
     return 0;
 }
