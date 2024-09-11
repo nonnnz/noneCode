@@ -23,3 +23,6 @@ __pycache__/
 # Build output
 build/
 dist/
+
+# tempCodeRunnerFile
+tempCodeRunnerFile.cpp
