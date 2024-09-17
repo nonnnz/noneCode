@@ -9,24 +9,27 @@ void solve() {
     for(int i = 0; i < m; ++i) {
         cin >> b[i];
     }
-    // vector<int> a(n, 0);
-    vector<int> a(q);
-    
-    // a[st - 1] = 1;
-    // int min = b[0];
-    cout << min(abs(st - b[0]), abs(st - b[1]));
+    sort(b.begin(), b.end());
+
+    for(int i = 0; i < q; ++i) {
+        int a;
+        cin >> a;
+        int idx = upper_bound(b.begin(), b.end(), a) - b.begin();
+        if(idx == 0) cout << b[0] - 1;
+        else if(idx == m) cout << n - b[m - 1];
+        else cout << (b[idx] - b[idx - 1]) / 2;
+        cout << endl;
+    }
 }
 
-    
-
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0); cout.tie(0);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr); cout.tie(nullptr);
     int tc = 1;
     cin >> tc;
     for (int t = 1; t <= tc; ++t) {
         solve();
-        cout << endl;
+        // cout << endl;
     }
     return 0;
 }
