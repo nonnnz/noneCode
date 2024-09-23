@@ -9,8 +9,6 @@ void solve() {
     for(int i = 0; i < n; ++i) {
         cin >> a[i];
     }
-
-    int memo[q][2][1];
     
     for(int i = 0; i < q; ++i) {
         int l, r;

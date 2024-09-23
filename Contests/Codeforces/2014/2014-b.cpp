@@ -3,11 +3,10 @@
 using namespace std;
 
 void solve() {
-    long long int n, k;
+    int n, k;
     cin >> n >> k;
-    if(n % 2 == 0) cout << "yes";
-    else if(k % 2 == 0) cout << "yes";
-    else cout << "no";
+    if(((n+1)*n/2 - (n-k)*(n-k+1)/2)%2) cout << "no";
+    else cout << "yes";
 }
 
 int main() {
