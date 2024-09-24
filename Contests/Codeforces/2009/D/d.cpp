@@ -13,10 +13,10 @@ int main()
         cout<<"\n"; 
     } 
 
-    cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC<<" secs"<<endl; 
+    // cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC<<" secs"<<endl; 
     return 0; 
 } 
 void solve() 
 {
-
+    
 } 
