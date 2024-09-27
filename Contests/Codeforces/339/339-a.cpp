@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void solve() {
+void solve2() {
     string s;
     cin >> s;
     vector<int> v;
@@ -17,6 +17,35 @@ void solve() {
         if (i < v.size() - 1) {
             cout << '+';
         }
+    }
+}
+
+void solve() {
+    char s[1000];
+    cin >> s;
+    int n = strlen(s);
+    int a[3] = {0};
+    for (int i = 0; i < n; ++i) {
+        if (s[i] == '1') {
+            ++a[0];
+        } else if (s[i] == '2') {
+            ++a[1];
+        } else if (s[i] == '3') {
+            ++a[2];
+        }
+    }
+    for(int i = 0; i <= n - 1; i += 2) {
+        if(a[0] > 0) {
+            cout << "1";
+            --a[0];
+        } else if(a[1] > 0) {
+            cout << "2";
+            --a[1];
+        } else {
+            cout << "3";
+            --a[2];
+        }
+        if(i < n - 1) cout << "+";
     }
 }
 
